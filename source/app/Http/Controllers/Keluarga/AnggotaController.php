@@ -7,6 +7,7 @@ use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Image;
 
 class AnggotaController extends Controller
@@ -69,9 +70,12 @@ class AnggotaController extends Controller
     public function edit($id)
     {
         $model = Anggota::find($id);
+        $collection = collect(DB::select('SELECT u.name,a.* FROM anggota AS a JOIN users AS u ON a.user_id = u.id WHERE a.keluarga_id='.Auth::user()->keluarga->id));
+
         return view('keluarga.anggota.form',[
             'model'=>$model,
             'user'=>$model->user,
+            'collection'=>$collection,
             'update'=>true
         ]);
     }
@@ -117,6 +121,8 @@ class AnggotaController extends Controller
 
         $model->dob = $request->dob;
         $model->gender = $request->gender;
+        $model->parent = $request->parent;
+        $model->married = $request->married;
         $model->save();
 
         return redirect()->route('keluarga.anggota.manage');

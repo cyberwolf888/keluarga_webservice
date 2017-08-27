@@ -136,8 +136,8 @@
                             <span class="title">Dashboard</span>
                         </a>
                     </li>
-                    <li class="nav-item @if (str_is('*.keluarga.*', Route::currentRouteName())) active @endif ">
-                        <a href="{{ route('admin.member.manage') }}" class="nav-link ">
+                    <li class="nav-item @if (str_is('*.setting.*', Route::currentRouteName())) active @endif ">
+                        <a href="{{ route('keluarga.setting.create') }}" class="nav-link ">
                             <i class="icon-rocket"></i>
                             <span class="title">Keluarga</span>
                         </a>

@@ -61,6 +61,16 @@
                             </div>
                         @endif
 
+                        @if(isset($update))
+                        <div class="form-group form-md-line-input {{ $errors->has('parent') ? ' has-error' : '' }}">
+                            {!! Form::select('parent',['null'=>null]+$collection->pluck('name','id')->all(), $model->parent,['id'=>'parent','placeholder'=>'','class'=>'form-control']) !!}
+                            <label for="parent">Parent ID</label>
+                        </div>
+                        <div class="form-group form-md-line-input {{ $errors->has('married') ? ' has-error' : '' }}">
+                            {!! Form::select('married',['null'=>null]+$collection->pluck('name','id')->all(), $model->married,['id'=>'married','placeholder'=>'','class'=>'form-control']) !!}
+                            <label for="married">Married to</label>
+                        </div>
+                        @endif
                         <div class="form-group form-md-line-input {{ $errors->has('name') ? ' has-error' : '' }}">
                             {!! Form::text('name', $user->name, ['id'=>'name','placeholder'=>'','class'=>'form-control', 'required']) !!}
                             <label for="name">Nama Lengkap</label>

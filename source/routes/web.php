@@ -52,4 +52,10 @@ Route::group(['prefix' => 'member', 'middleware' => ['auth','role:keluarga-acces
         Route::get('/edit/{id}', 'Keluarga\AnggotaController@edit')->name('.edit');
         Route::post('/edit/{id}', 'Keluarga\AnggotaController@update')->name('.update');
     });
+
+    //Setting
+    Route::group(['prefix' => 'setting', 'as'=>'.setting'], function() {
+        Route::get('/', 'Keluarga\KeluargaController@edit')->name('.create');
+        Route::post('/', 'Keluarga\KeluargaController@update')->name('.store');
+    });
 });
