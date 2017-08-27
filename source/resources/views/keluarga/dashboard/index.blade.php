@@ -86,7 +86,16 @@
                     </div>
                 </div>
                 <div class="portlet-body">
-
+                    <?php
+                    $sql = "SELECT u.name,a.* FROM anggota AS a JOIN users AS u ON a.user_id = u.id WHERE a.parent=0 AND a.keluarga_id=".Auth::user()->keluarga->id;
+                    // Execute the query and go through the results.
+                    $result = DB::select($sql);
+                    $rootRow = $result[0];
+                    echo '<ul>';
+                    \App\Models\Tree::display_with_children($rootRow, 0);
+                    echo '</ul>';
+                    echo '<br><br>';
+                    ?>
                 </div>
             </div>
             <!-- END PORTLET-->

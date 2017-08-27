@@ -23,11 +23,11 @@
     <!-- BEGIN PAGE BREADCRUMB -->
     <ul class="page-breadcrumb breadcrumb">
         <li>
-            <a href="{{ route('admin.dashboard') }}">Home</a>
+            <a href="{{ route('keluarga.dashboard') }}">Home</a>
             <i class="fa fa-circle"></i>
         </li>
         <li>
-            <a href="{{ route('admin.member.manage') }}">Admin</a>
+            <a href="{{ route('keluarga.anggota.manage') }}">Anggota</a>
             <i class="fa fa-circle"></i>
         </li>
         <li>
@@ -47,7 +47,7 @@
                     </div>
                     <div class="actions">
                         <div class="btn-group btn-group-devided">
-                            <a href="{{ route('admin.member.create') }}" class="btn btn-circle green">
+                            <a href="{{ route('keluarga.anggota.create') }}" class="btn btn-circle green">
                                 <i class="fa fa-plus"></i> Add new data
                             </a>
                         </div>
@@ -100,12 +100,13 @@
                             @foreach($model as $row)
                                 <tr>
                                     <td> {{ $no }} </td>
-                                    <td> {{ $row->name }}</td>
-                                    <td> {{ $row->email }} </td>
-                                    <td> {{ $row->telp }} </td>
-                                    <td> {{ $row->isActive == 1 ? 'Aktif':'Tidak Aktif' }} </td>
+                                    <td> {{ $row->user->name }}</td>
+                                    <td> {{ $row->user->email }} </td>
+                                    <td> {{ $row->user->telp }} </td>
+                                    <td> {{ $row->jenis_kelamin() }} </td>
+                                    <td> {{ $row->user->isActive == 1 ? 'Aktif':'Tidak Aktif' }} </td>
                                     <td class="center" width="130">
-                                        <a href="{{ route('admin.member.edit',$row->id) }}" class="btn yellow-saffron btn-xs"><i class="fa fa-pencil"></i></a>
+                                        <a href="{{ route('keluarga.anggota.edit',$row->id) }}" class="btn yellow-saffron btn-xs"><i class="fa fa-pencil"></i></a>
                                         <!-- <a href="#" class="btn red-mint btn-xs"><i class="fa fa-trash"></i></a> -->
                                     </td>
                                 </tr>

@@ -26,4 +26,9 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function keluarga()
+    {
+        return $this->hasOne('App\Models\Keluarga','user_id');
+    }
 }
