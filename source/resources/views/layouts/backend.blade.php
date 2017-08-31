@@ -148,6 +148,12 @@
                             <span class="title">Anggota</span>
                         </a>
                     </li>
+                        <li class="nav-item @if (str_is('*.profile.*', Route::currentRouteName())) active @endif ">
+                            <a href="{{ route('keluarga.profile.edit') }}" class="nav-link ">
+                                <i class="icon-user"></i>
+                                <span class="title">Profile</span>
+                            </a>
+                        </li>
                 @endcan
             </ul>
             <!-- END SIDEBAR MENU -->

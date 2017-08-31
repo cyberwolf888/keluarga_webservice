@@ -43,6 +43,7 @@ Route::group(['prefix' => 'member', 'middleware' => ['auth','role:keluarga-acces
 
     //Dashboard
     Route::get('/', 'Keluarga\DashboardController@index')->name('.dashboard');
+    Route::get('/print', 'Keluarga\DashboardController@print_tree')->name('.print');
 
     //Anggota
     Route::group(['prefix' => 'anggota', 'as'=>'.anggota'], function() {
@@ -57,5 +58,11 @@ Route::group(['prefix' => 'member', 'middleware' => ['auth','role:keluarga-acces
     Route::group(['prefix' => 'setting', 'as'=>'.setting'], function() {
         Route::get('/', 'Keluarga\KeluargaController@edit')->name('.create');
         Route::post('/', 'Keluarga\KeluargaController@update')->name('.store');
+    });
+
+    //Profile
+    Route::group(['prefix' => 'profile', 'as'=>'.profile'], function() {
+        Route::get('/', 'Keluarga\ProfileController@edit')->name('.edit');
+        Route::post('/', 'Keluarga\ProfileController@update')->name('.update');
     });
 });
