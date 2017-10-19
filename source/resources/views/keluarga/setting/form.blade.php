@@ -72,7 +72,7 @@
                         </div>
 
                         <div class="form-group form-md-line-input {{ $errors->has('keturunan') ? ' has-error' : '' }}">
-                            {!! Form::select('keturunan', $collection->pluck('name','id'), $anggota->id,['id'=>'keturunan','placeholder'=>'','class'=>'form-control', 'required']) !!}
+                            {!! Form::select('keturunan', $collection->pluck('name','id'), count($anggota)==0 ? null : $anggota[0]->id,['id'=>'keturunan','placeholder'=>'','class'=>'form-control', 'required']) !!}
                             <label for="keturunan">Keturunan Pertama</label>
                         </div>
 

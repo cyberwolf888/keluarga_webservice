@@ -18,7 +18,7 @@ class KeluargaController extends Controller
         $collection = collect(DB::select('SELECT u.name,a.* FROM anggota AS a JOIN users AS u ON a.user_id = u.id WHERE a.keluarga_id='.$model->id));
         return view('keluarga.setting.form',[
             'model'=>$model,
-            'anggota'=>$anggota[0],
+            'anggota'=>$anggota,
             'collection'=>$collection,
             'update'=>true
         ]);
@@ -34,9 +34,11 @@ class KeluargaController extends Controller
 
         $keluarga = Auth::user()->keluarga;
         $kepala = DB::select('SELECT u.name,a.* FROM anggota AS a JOIN users AS u ON a.user_id = u.id WHERE a.keluarga_id='.$keluarga->id.' AND a.parent=0');
-        $anggota = Anggota::find($kepala[0]->id);
-        $anggota->parent = null;
-        $anggota->save();
+        if(count($kepala)>0){
+            $anggota = Anggota::find($kepala[0]->id);
+            $anggota->parent = null;
+            $anggota->save();
+        }
 
         $keluarga->nama = $request->nama;
         $keluarga->asal = $request->asal;
@@ -48,4 +50,5 @@ class KeluargaController extends Controller
 
         return redirect()->route('keluarga.setting.create');
     }
+
 }

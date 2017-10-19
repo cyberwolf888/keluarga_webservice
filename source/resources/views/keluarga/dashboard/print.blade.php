@@ -17,7 +17,7 @@
     //dd($rootRow);
     if(count($result)>0){
         echo '<ul>';
-        \App\Models\Tree::display_with_children($rootRow, 0, Auth::user()->keluarga->id);
+        \App\Models\Tree::display_with_children($rootRow, 0, Auth::user()->keluarga->id,true);
         echo '</ul>';
     }
     ?>

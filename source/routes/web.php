@@ -44,6 +44,10 @@ Route::group(['prefix' => 'member', 'middleware' => ['auth','role:keluarga-acces
     //Dashboard
     Route::get('/', 'Keluarga\DashboardController@index')->name('.dashboard');
     Route::get('/print', 'Keluarga\DashboardController@print_tree')->name('.print');
+    Route::get('/addparent/{id}', 'Keluarga\DashboardController@addparent')->name('.addparent');
+    Route::post('/addparent/{id}', 'Keluarga\DashboardController@storeaddparent')->name('.storeaddparent');
+    Route::get('/addwedding/{id}', 'Keluarga\DashboardController@addwedding')->name('.addwedding');
+    Route::post('/storeaddwedding/{id}', 'Keluarga\DashboardController@storeaddwedding')->name('.storeaddwedding');
 
     //Anggota
     Route::group(['prefix' => 'anggota', 'as'=>'.anggota'], function() {
