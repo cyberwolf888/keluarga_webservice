@@ -59,7 +59,6 @@ class AuthController extends Controller
         $rules = [
             'name' => 'required|string|max:255',
             'phone' => 'required|alpha_num|max:12',
-            'address' => 'required|string|max:255',
             'image' => 'image|max:3500'
         ];
 
@@ -80,7 +79,7 @@ class AuthController extends Controller
         }
 
         if ($request->hasFile('image')) {
-            $path = base_path('assets/img/profile/');
+            $path = base_path('../assets/profile/');
             if(is_file($path.$model->img)){
                 unlink($path.$model->img);
             }
@@ -90,8 +89,7 @@ class AuthController extends Controller
 
         $model->name = $request->name;
         $model->email = $request->email;
-        $model->phone = $request->phone;
-        $model->address = $request->address;
+        $model->telp = $request->phone;
         $model->save();
 
         return response()->json(['status'=>1,'img'=>$model->img]);
