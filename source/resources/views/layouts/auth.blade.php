@@ -39,7 +39,7 @@
 
 <div class="logo">
     <a href="{{ url('/') }}">
-        <img src="{{ url('assets') }}/backend/layouts/layout4/img/logo-white-small.png" alt="" /> </a>
+        <img src="{{ url('assets') }}/backend/img/logo.png" alt="" width="100" height="100"/> </a>
 </div>
 <!-- END LOGO -->
 <!-- BEGIN LOGIN -->

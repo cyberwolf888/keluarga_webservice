@@ -44,7 +44,7 @@
         <!-- BEGIN LOGO -->
         <div class="page-logo">
             <a href="{{ url('/backend') }}">
-                <img src="{{ url('assets') }}/backend/layouts/layout4/img/logo-small.png" alt="logo" class="" style="margin-top: 10px;"/> </a>
+                <img src="{{ url('assets') }}/backend/img/logo.png" alt="logo" class="" style="margin-top: 5px;" width="65" height="65"/> </a>
             <div class="menu-toggler sidebar-toggler">
                 <!-- DOC: Remove the above "hide" to enable the sidebar toggler button on header -->
             </div>
@@ -115,12 +115,12 @@
             <!-- DOC: Set data-auto-speed="200" to adjust the sub menu slide up/down speed -->
             <ul class="page-sidebar-menu   " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
                 @can('admin-access')
-                    <li class="nav-item @if (str_is('*.dashboard', Route::currentRouteName())) active @endif start ">
+                    <!-- <li class="nav-item @if (str_is('*.dashboard', Route::currentRouteName())) active @endif start ">
                         <a href="{{ route('admin.dashboard') }}" class="nav-link ">
                             <i class="icon-home"></i>
                             <span class="title">Dashboard</span>
                         </a>
-                    </li>
+                    </li> -->
                     <li class="nav-item @if (str_is('*.member.*', Route::currentRouteName())) active @endif ">
                         <a href="{{ route('admin.member.manage') }}" class="nav-link ">
                             <i class="icon-rocket"></i>
