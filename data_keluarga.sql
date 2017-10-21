@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 19 Okt 2017 pada 09.35
+-- Generation Time: 21 Okt 2017 pada 21.36
 -- Versi Server: 10.1.13-MariaDB
 -- PHP Version: 7.0.5
 
@@ -48,6 +48,34 @@ INSERT INTO `anggota` (`id`, `user_id`, `keluarga_id`, `parent`, `married`, `dob
 (3, 14, 1, NULL, NULL, '2017-10-10', 'P', '2017-10-19 07:05:56', '2017-10-19 07:05:56'),
 (4, 15, 1, 1, NULL, '2017-10-04', 'L', '2017-10-19 07:09:07', '2017-10-19 07:09:16'),
 (5, 16, 1, 1, NULL, '2017-10-04', 'L', '2017-10-19 07:11:23', '2017-10-19 07:11:29');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `gallery`
+--
+
+CREATE TABLE `gallery` (
+  `id` int(11) NOT NULL,
+  `anggota_id` int(11) DEFAULT NULL,
+  `keluarga_id` int(11) DEFAULT NULL,
+  `caption` varchar(100) DEFAULT NULL,
+  `img` varchar(100) DEFAULT NULL,
+  `views` int(11) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `gallery`
+--
+
+INSERT INTO `gallery` (`id`, `anggota_id`, `keluarga_id`, `caption`, `img`, `views`, `created_at`, `updated_at`) VALUES
+(1, 2, 1, 'asd', 'ba1fc48ba156126679641e9dff8d1257.jpg', 0, '2017-10-21 18:56:29', '2017-10-21 18:56:29'),
+(2, 2, 1, 'mecaru', '8072485239e235a48c476a832d113ef7.jpg', 0, '2017-10-21 18:57:36', '2017-10-21 18:57:36'),
+(3, 2, 1, 'asd', 'c590c58a9c33a3fbbaa11cea0fcb293e.jpg', 0, '2017-10-21 19:28:21', '2017-10-21 19:28:21'),
+(4, 2, 1, 'fgh', 'c1c96efa96d661d8533f71b011ee581f.jpg', 0, '2017-10-21 19:29:52', '2017-10-21 19:29:52'),
+(5, 2, 1, 'as', '3141068934fbf3042c73f3594fad1203.jpg', 0, '2017-10-21 19:35:48', '2017-10-21 19:35:48');
 
 -- --------------------------------------------------------
 
@@ -108,10 +136,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `telp`, `password`, `type`, `img`, `isActive`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'admin', 'admin@mail.com', '082247464196', '$2y$10$3pBGmr9UxTQLkMJeojU3j.nW/9YC5u1nIPHBU4r.wzGKm6mUpDRC.', 1, NULL, 1, 'gvz13PMLw3Y5OoXdgGKvND10YCe8nkD1e2he88MLyLB8vqq8XbXZb9Kbl5vt', '2017-08-24 09:09:07', '2017-08-24 09:09:07'),
+(1, 'admin', 'admin@mail.com', '082247464196', '$2y$10$3pBGmr9UxTQLkMJeojU3j.nW/9YC5u1nIPHBU4r.wzGKm6mUpDRC.', 1, NULL, 1, 'kLo40vWakvZD4JbOSlX7MQatieh3rKhMjU6jQToQIrs57acY0mmqHXm2h86c', '2017-08-24 09:09:07', '2017-08-24 09:09:07'),
 (11, 'I Wayan Bledor', 'member@mail.com', '083357565894', '$2y$10$oeqNqm3MUVmo4dY6TzuZCuooNnhuoYbw.aRI.Xe8e.VJUHvk8RfuW', 2, NULL, 1, NULL, '2017-10-19 05:15:50', '2017-10-19 05:15:50'),
 (12, 'I Made Hendra Wijaya', 'wijaya.imd@gmail.com', '082247464196', '$2y$10$mUkzQOIVhNvAU0tww76q7.GvPHPqjgUdXsAcfYfnXGaQnLhjUQA5G', 3, 'de4cf61ef7ec1640339bebd4bf590360.jpg', 1, NULL, '2017-10-19 05:17:32', '2017-10-19 05:17:32'),
-(13, 'I Wayan awesome', 'awesome@mail.com', '0847347377', '$2y$10$NT.7nTosXfnH0EecL4AXLevN/.eDqxMmDmvQjFZI1p6s3jlPMhDYq', 3, '4987f43839c54e2684605978c29b2ad3.jpg', 1, NULL, '2017-10-19 06:49:40', '2017-10-19 07:12:26'),
+(13, 'I Wayan Bedebah', 'awesome@mail.com', '0847347377', '$2y$10$NT.7nTosXfnH0EecL4AXLevN/.eDqxMmDmvQjFZI1p6s3jlPMhDYq', 3, 'dc5e0fd02b67f6b988abaa744ea5924b.jpg', 1, NULL, '2017-10-19 06:49:40', '2017-10-21 18:32:18'),
 (14, 'Ni Made Cintya', 'cintya@mail.com', '08347483', '$2y$10$YGeBM1cLBGsOH1eNwL5k1OMq5VBU/.u7DP3/ku0VcwsBAeX2F0GNC', 3, '7654591c93ff272e2ac0c58fe20a8b59.jpg', 1, NULL, '2017-10-19 07:05:56', '2017-10-19 07:05:56'),
 (15, 'I Made Bledor', 'bledor@mail.com', '49940489', '$2y$10$PhqzJsW9Dmn8yPxlFLcnyOIPsO/TN.TnvZobxEg5KNTtiAWLFErJ.', 3, '82b0c6b24e28aa50497a50a6b9de2285.jpg', 1, NULL, '2017-10-19 07:09:07', '2017-10-19 07:09:07'),
 (16, 'i Ketut test', 'ketut@mail.com', '23123123', '$2y$10$QBKuG62Xy.3EuckEr48LNeQwSO3.YgOr6eUF84E2Wj7UxpSUdISgq', 3, '26c4e2536ad14a09ab48979f362efbe0.jpg', 1, NULL, '2017-10-19 07:11:23', '2017-10-19 07:11:23');
@@ -124,6 +152,12 @@ INSERT INTO `users` (`id`, `name`, `email`, `telp`, `password`, `type`, `img`, `
 -- Indexes for table `anggota`
 --
 ALTER TABLE `anggota`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `gallery`
+--
+ALTER TABLE `gallery`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -153,6 +187,11 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `anggota`
 --
 ALTER TABLE `anggota`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+--
+-- AUTO_INCREMENT for table `gallery`
+--
+ALTER TABLE `gallery`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `keluarga`

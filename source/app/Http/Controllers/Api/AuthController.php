@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Models\Anggota;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -14,7 +15,8 @@ class AuthController extends Controller
     {
         if(Auth::attempt(['email' => $request->email, 'password' => $request->password, 'type'=>3, 'isActive'=>1])){
             $model = Auth::user();
-            return response()->json(['status'=>1,'data'=>$model->toArray()]);
+            $anggota = Anggota::select(\DB::raw('id as anggota_id, keluarga_id'))->where('user_id',$model->id)->first()->toArray();
+            return response()->json(['status'=>1,'data'=>$model->toArray()+$anggota]);
         }else{
             return response()->json(['status'=>0]);
         }

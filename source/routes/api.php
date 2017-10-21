@@ -17,3 +17,6 @@ Route::post('/login', 'Api\AuthController@login')->name('login');
 Route::post('/register', 'Api\AuthController@register')->name('register');
 Route::post('/edit_account', 'Api\AuthController@edit_account')->name('edit_account');
 Route::post('/update_account', 'Api\AuthController@update_account')->name('update_account');
+
+Route::post('/getGallery', 'Api\KeluargaController@getGallery')->name('getGallery');
+Route::post('/uploadGallery', 'Api\KeluargaController@uploadGallery')->name('uploadGallery');
