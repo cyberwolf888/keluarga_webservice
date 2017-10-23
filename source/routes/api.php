@@ -20,3 +20,5 @@ Route::post('/update_account', 'Api\AuthController@update_account')->name('updat
 
 Route::post('/getGallery', 'Api\KeluargaController@getGallery')->name('getGallery');
 Route::post('/uploadGallery', 'Api\KeluargaController@uploadGallery')->name('uploadGallery');
+Route::post('/detailGallery', 'Api\KeluargaController@detailGallery')->name('detailGallery');
+Route::get('/getPohonKeluarga', 'Api\KeluargaController@getPohonKeluarga')->name('getPohonKeluarga');
