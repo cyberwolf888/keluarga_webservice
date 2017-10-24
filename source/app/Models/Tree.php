@@ -16,9 +16,17 @@ class Tree
             echo '
             <table>
                 <tr>
-                    <td><img src="'.url('assets/profile/'.$parentRow->img).'" width="100px" height="100px"></td>
+                    <td>
+                        <a href="'.url('api/getDetailAnggota/'.$parentRow->id).'" data-remote="false" data-toggle="modal" data-target="#myModal" >
+                            <img src="'.url('assets/profile/'.$parentRow->img).'" width="100px" height="100px">
+                        </a>
+                    </td>
                     <td width="10px">  </td>
-                    <td><img src="'.url('assets/profile/'.$married->user->img).'" width="100px" height="100px"></td>
+                    <td>
+                        <a href="'.url('api/getDetailAnggota/'.$married->id).'" data-remote="false" data-toggle="modal" data-target="#myModal" >
+                            <img src="'.url('assets/profile/'.$married->user->img).'" width="100px" height="100px">
+                        </a>
+                    </td>
                 </tr>
                 <tr>
                     <td>'.$parentRow->name.'</td>
@@ -32,7 +40,11 @@ class Tree
                 echo '
                         <table>
                             <tr>
-                                <td><img src="'.url('assets/profile/'.$parentRow->img).'" width="100px" height="100px"></td>
+                                <td>
+                                    <a href="'.url('api/getDetailAnggota/'.$parentRow->id).'" data-remote="false" data-toggle="modal" data-target="#myModal" >
+                                        <img src="'.url('assets/profile/'.$parentRow->img).'" width="100px" height="100px">
+                                    </a>
+                                </td>
                             </tr>
                             <tr>
                                 <td>'.$parentRow->name.'</td>

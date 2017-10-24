@@ -66,4 +66,10 @@ class KeluargaController extends Controller
             'keluarga_id'=>$request->keluarga_id
         ]);
     }
+
+    public function getDetailAnggota($id)
+    {
+        $model = Anggota::find($id);
+        return view('api.anggota',['model'=>$model]);
+    }
 }

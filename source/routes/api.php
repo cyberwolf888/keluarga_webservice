@@ -22,3 +22,4 @@ Route::post('/getGallery', 'Api\KeluargaController@getGallery')->name('getGaller
 Route::post('/uploadGallery', 'Api\KeluargaController@uploadGallery')->name('uploadGallery');
 Route::post('/detailGallery', 'Api\KeluargaController@detailGallery')->name('detailGallery');
 Route::get('/getPohonKeluarga', 'Api\KeluargaController@getPohonKeluarga')->name('getPohonKeluarga');
+Route::get('/getDetailAnggota/{id}', 'Api\KeluargaController@getDetailAnggota')->name('getDetailAnggota');
