@@ -36,6 +36,11 @@ class AnggotaController extends Controller
             'dob' => 'required',
             'gender' => 'required',
             'isActive' => 'required',
+            'wuku' => 'required',
+            'triwara' => 'required',
+            'pancawara' => 'required',
+            'sasih' => 'required',
+            'urip' => 'required',
             'image' => 'required|image|max:3500'
         ]);
 
@@ -57,6 +62,11 @@ class AnggotaController extends Controller
         $anggota->keluarga_id = Auth::user()->keluarga->id;
         $anggota->dob = $request->dob;
         $anggota->gender = $request->gender;
+        $anggota->wuku = $request->wuku;
+        $anggota->triwara = $request->triwara;
+        $anggota->pancawara = $request->pancawara;
+        $anggota->sasih = $request->sasih;
+        $anggota->urip = $request->urip;
         $anggota->save();
 
         return redirect()->route('keluarga.anggota.manage');
@@ -90,6 +100,11 @@ class AnggotaController extends Controller
             'isActive' => 'required',
             'dob' => 'required',
             'gender' => 'required',
+            'wuku' => 'required',
+            'triwara' => 'required',
+            'pancawara' => 'required',
+            'sasih' => 'required',
+            'urip' => 'required',
             'image' => 'image|max:3500'
         ];
 
@@ -123,6 +138,11 @@ class AnggotaController extends Controller
         $model->gender = $request->gender;
         $model->parent = $request->parent;
         $model->married = $request->married;
+        $model->wuku = $request->wuku;
+        $model->triwara = $request->triwara;
+        $model->pancawara = $request->pancawara;
+        $model->sasih = $request->sasih;
+        $model->urip = $request->urip;
         $model->save();
 
         return redirect()->route('keluarga.anggota.manage');

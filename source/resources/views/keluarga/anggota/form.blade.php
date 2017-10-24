@@ -63,11 +63,11 @@
 
                         @if(isset($update))
                         <div class="form-group form-md-line-input {{ $errors->has('parent') ? ' has-error' : '' }}">
-                            {!! Form::select('parent',['null'=>null]+$collection->pluck('name','id')->all(), $model->parent,['id'=>'parent','placeholder'=>'','class'=>'form-control']) !!}
+                            {!! Form::select('parent',[''=>""]+$collection->pluck('name','id')->all(), $model->parent,['id'=>'parent','placeholder'=>'','class'=>'form-control']) !!}
                             <label for="parent">Parent ID</label>
                         </div>
                         <div class="form-group form-md-line-input {{ $errors->has('married') ? ' has-error' : '' }}">
-                            {!! Form::select('married',['null'=>null]+$collection->pluck('name','id')->all(), $model->married,['id'=>'married','placeholder'=>'','class'=>'form-control']) !!}
+                            {!! Form::select('married',[''=>""]+$collection->pluck('name','id')->all(), $model->married,['id'=>'married','placeholder'=>'','class'=>'form-control']) !!}
                             <label for="married">Married to</label>
                         </div>
                         @endif
@@ -106,6 +106,31 @@
                             <label for="password_confirmation">Password Confirmation</label>
                         </div>
 
+                        <div class="form-group form-md-line-input {{ $errors->has('wuku') ? ' has-error' : '' }}">
+                            {!! Form::text('wuku', $model->wuku, ['id'=>'wuku','placeholder'=>'','class'=>'form-control', 'required']) !!}
+                            <label for="wuku">Wuku</label>
+                        </div>
+
+                        <div class="form-group form-md-line-input {{ $errors->has('triwara') ? ' has-error' : '' }}">
+                            {!! Form::text('triwara', $model->triwara, ['id'=>'triwara','placeholder'=>'','class'=>'form-control', 'required']) !!}
+                            <label for="triwara">Triwara</label>
+                        </div>
+
+                        <div class="form-group form-md-line-input {{ $errors->has('pancawara') ? ' has-error' : '' }}">
+                            {!! Form::text('pancawara', $model->pancawara, ['id'=>'pancawara','placeholder'=>'','class'=>'form-control', 'required']) !!}
+                            <label for="pancawara">Pancawara</label>
+                        </div>
+
+                        <div class="form-group form-md-line-input {{ $errors->has('sasih') ? ' has-error' : '' }}">
+                            {!! Form::text('sasih', $model->sasih, ['id'=>'sasih','placeholder'=>'','class'=>'form-control', 'required']) !!}
+                            <label for="sasih">Sasih</label>
+                        </div>
+
+                        <div class="form-group form-md-line-input {{ $errors->has('urip') ? ' has-error' : '' }}">
+                            {!! Form::text('urip', $model->urip, ['id'=>'urip','placeholder'=>'','class'=>'form-control', 'required']) !!}
+                            <label for="urip">Urip</label>
+                        </div>
+
                         <div class="form-group form-md-line-input {{ $errors->has('isActive') ? ' has-error' : '' }}">
                             {!! Form::select('isActive', ['1'=>'Active','0'=>'Suspend'], $user->isActive,['id'=>'status','placeholder'=>'','class'=>'form-control', 'required']) !!}
                             <label for="status">Status Account</label>
@@ -138,6 +163,25 @@
                 </div>
             </div>
 
+        </div>
+        <div class="col-md-6 ">
+
+            <!-- BEGIN SAMPLE FORM PORTLET-->
+            <div class="portlet light bordered">
+
+                <div class="portlet-title">
+                    <div class="caption font-red-sunglo">
+                        <i class="icon-settings font-red-sunglo"></i>
+                        <span class="caption-subject bold uppercase"> Kalender Bali</span>
+                    </div>
+                </div>
+
+                <div class="portlet-body form">
+                    <div class="embed-responsive embed-responsive-16by9" style="padding-bottom: 99.25%;">
+                        <iframe class="embed-responsive-item" src="http://kalenderbali.org/klasik"></iframe>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <!-- END PAGE BASE CONTENT -->
