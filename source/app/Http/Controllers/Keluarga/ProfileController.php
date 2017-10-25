@@ -21,6 +21,7 @@ class ProfileController extends Controller
         $validator = [
             'name' => 'required|max:255',
             'telp' => 'required',
+            'image' => 'image|max:3500'
         ];
 
         if($request->password != null){
@@ -34,6 +35,15 @@ class ProfileController extends Controller
         }
 
         $this->validate($request, $validator);
+
+        if ($request->hasFile('image')) {
+            $path = base_path('../assets/profile/');
+            if(is_file($path.$model->img)){
+                unlink($path.$model->img);
+            }
+            $file = \Image::make($request->file('image'))->resize(600, 600)->encode('jpg', 80)->save($path.md5(str_random(12)).'.jpg');
+            $model->img = $file->basename;
+        }
 
         $model->name = $request->name;
         $model->telp = $request->telp;

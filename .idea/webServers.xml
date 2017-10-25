@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="dab2ef72-c71c-46c8-b407-3f506b7c112e" name="keluarga" url="http://www.keluargahindu.ml">
+        <fileTransfer host="ftp.imadehendrawijaya.com" port="21">
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

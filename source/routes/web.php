@@ -64,6 +64,12 @@ Route::group(['prefix' => 'member', 'middleware' => ['auth','role:keluarga-acces
         Route::post('/', 'Keluarga\KeluargaController@update')->name('.store');
     });
 
+    //Gallery
+    Route::group(['prefix' => 'gallery', 'as'=>'.gallery'], function() {
+        Route::get('/', 'Keluarga\GalleryController@index')->name('.manage');
+        Route::get('/delete/{id}', 'Keluarga\GalleryController@destroy')->name('.delete');
+    });
+
     //Profile
     Route::group(['prefix' => 'profile', 'as'=>'.profile'], function() {
         Route::get('/', 'Keluarga\ProfileController@edit')->name('.edit');

@@ -71,7 +71,12 @@
                         <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
                             <span class="username username-hide-on-mobile"> {{ Auth::user()->name }} </span>
                             <!-- DOC: Do not remove below empty space(&nbsp;) as its purposely used -->
-                            <img alt="" class="img-circle" src="{{ url('assets') }}/backend/layouts/layout4/img/no_ava.jpg" /> </a>
+                            @if(Auth::user()->img == "")
+                                <img alt="" class="img-circle" src="{{ url('assets') }}/backend/layouts/layout4/img/no_ava.jpg" />
+                            @else
+                                <img alt="" class="img-circle" src="{{ url('assets/profile/'.Auth::user()->img) }}" />
+                            @endif
+                        </a>
 
                     </li>
                     <!-- END USER LOGIN DROPDOWN -->
@@ -124,7 +129,7 @@
                     <li class="nav-item @if (str_is('*.member.*', Route::currentRouteName())) active @endif ">
                         <a href="{{ route('admin.member.manage') }}" class="nav-link ">
                             <i class="icon-rocket"></i>
-                            <span class="title">Member</span>
+                            <span class="title">Operator</span>
                         </a>
                     </li>
                 @endcan
@@ -133,7 +138,7 @@
                     <li class="nav-item @if (str_is('*.dashboard', Route::currentRouteName())) active @endif start ">
                         <a href="{{ route('keluarga.dashboard') }}" class="nav-link ">
                             <i class="icon-home"></i>
-                            <span class="title">Dashboard</span>
+                            <span class="title">Silsilah</span>
                         </a>
                     </li>
                     <li class="nav-item @if (str_is('*.setting.*', Route::currentRouteName())) active @endif ">
@@ -148,6 +153,12 @@
                             <span class="title">Anggota</span>
                         </a>
                     </li>
+                        <li class="nav-item @if (str_is('*.gallery.*', Route::currentRouteName())) active @endif ">
+                            <a href="{{ route('keluarga.gallery.manage') }}" class="nav-link ">
+                                <i class="icon-rocket"></i>
+                                <span class="title">Gallery</span>
+                            </a>
+                        </li>
                         <li class="nav-item @if (str_is('*.profile.*', Route::currentRouteName())) active @endif ">
                             <a href="{{ route('keluarga.profile.edit') }}" class="nav-link ">
                                 <i class="icon-user"></i>
