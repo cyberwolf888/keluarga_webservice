@@ -75,7 +75,10 @@
                             {!! Form::text('name', $user->name, ['id'=>'name','placeholder'=>'','class'=>'form-control', 'required']) !!}
                             <label for="name">Nama Lengkap</label>
                         </div>
-
+                        <div class="form-group form-md-line-input {{ $errors->has('kasta') ? ' has-error' : '' }}">
+                            {!! Form::select('kasta', ['Brahmana'=>'Brahmana','Ksatria'=>'Ksatria','Weisya'=>'Weisya','Sudra'=>'Sudra'], $model->kasta,['id'=>'kasta','placeholder'=>'','class'=>'form-control', 'required']) !!}
+                            <label for="kasta">Kasta</label>
+                        </div>
                         <div class="form-group form-md-line-input {{ $errors->has('telp') ? ' has-error' : '' }}">
                             {!! Form::text('telp', $user->telp, ['id'=>'telp','placeholder'=>'','class'=>'form-control', 'required']) !!}
                             <label for="telp">Nomer Telp</label>

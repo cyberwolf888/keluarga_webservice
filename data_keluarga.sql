@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 24 Okt 2017 pada 20.54
+-- Generation Time: 27 Okt 2017 pada 16.38
 -- Versi Server: 10.1.13-MariaDB
 -- PHP Version: 7.0.5
 
@@ -39,6 +39,7 @@ CREATE TABLE `anggota` (
   `pancawara` varchar(50) DEFAULT NULL,
   `sasih` varchar(50) DEFAULT NULL,
   `urip` varchar(50) DEFAULT NULL,
+  `kasta` varchar(50) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -47,13 +48,13 @@ CREATE TABLE `anggota` (
 -- Dumping data untuk tabel `anggota`
 --
 
-INSERT INTO `anggota` (`id`, `user_id`, `keluarga_id`, `parent`, `married`, `dob`, `gender`, `wuku`, `triwara`, `pancawara`, `sasih`, `urip`, `created_at`, `updated_at`) VALUES
-(1, 12, 1, 0, 3, '1994-08-06', 'L', '', '', '', '', '', '2017-10-19 05:17:32', '2017-10-19 07:06:04'),
-(2, 13, 1, 1, NULL, '2017-10-26', 'L', 'sungsang', 'beteng', 'wage', 'kelima', '8+4', '2017-10-19 06:49:40', '2017-10-24 18:03:17'),
-(3, 14, 1, NULL, NULL, '2017-10-10', 'P', '', '', '', '', '', '2017-10-19 07:05:56', '2017-10-19 07:05:56'),
-(4, 15, 1, 1, NULL, '2017-10-04', 'L', '', '', '', '', '', '2017-10-19 07:09:07', '2017-10-19 07:09:16'),
-(5, 16, 1, 1, NULL, '2017-10-04', 'L', '', '', '', '', '', '2017-10-19 07:11:23', '2017-10-19 07:11:29'),
-(6, 17, 1, 2, NULL, '2017-10-24', 'L', 'sungsang', 'kajeng', 'paing', 'kelima', '3+9', '2017-10-24 03:15:23', '2017-10-24 18:03:22');
+INSERT INTO `anggota` (`id`, `user_id`, `keluarga_id`, `parent`, `married`, `dob`, `gender`, `wuku`, `triwara`, `pancawara`, `sasih`, `urip`, `kasta`, `created_at`, `updated_at`) VALUES
+(1, 12, 1, 0, 3, '1994-08-06', 'L', '', '', '', '', '', NULL, '2017-10-19 05:17:32', '2017-10-19 07:06:04'),
+(2, 13, 1, 1, NULL, '2017-10-26', 'L', 'sungsang', 'beteng', 'wage', 'kelima', '8+4', NULL, '2017-10-19 06:49:40', '2017-10-24 18:03:17'),
+(3, 14, 1, NULL, NULL, '2017-10-10', 'P', '', '', '', '', '', NULL, '2017-10-19 07:05:56', '2017-10-19 07:05:56'),
+(4, 15, 1, 1, NULL, '2017-10-04', 'L', '', '', '', '', '', NULL, '2017-10-19 07:09:07', '2017-10-19 07:09:16'),
+(5, 16, 1, 1, NULL, '2017-10-04', 'L', '', '', '', '', '', NULL, '2017-10-19 07:11:23', '2017-10-19 07:11:29'),
+(6, 17, 1, 2, NULL, '2017-10-24', 'L', 'sungsang', 'kajeng', 'paing', 'kelima', '3+9', NULL, '2017-10-24 03:15:23', '2017-10-24 18:03:22');
 
 -- --------------------------------------------------------
 

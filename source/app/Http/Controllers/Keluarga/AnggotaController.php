@@ -30,6 +30,7 @@ class AnggotaController extends Controller
     {
         $this->validate($request, [
             'name' => 'required|max:255',
+            'kasta' => 'required',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|min:6|confirmed',
             'telp' => 'required',
@@ -67,6 +68,7 @@ class AnggotaController extends Controller
         $anggota->pancawara = $request->pancawara;
         $anggota->sasih = $request->sasih;
         $anggota->urip = $request->urip;
+        $anggota->kasta = $request->kasta;
         $anggota->save();
 
         return redirect()->route('keluarga.anggota.manage');
@@ -97,6 +99,7 @@ class AnggotaController extends Controller
         $validator = [
             'name' => 'required|max:255',
             'telp' => 'required',
+            'kasta' => 'required',
             'isActive' => 'required',
             'dob' => 'required',
             'gender' => 'required',
@@ -143,6 +146,7 @@ class AnggotaController extends Controller
         $model->pancawara = $request->pancawara;
         $model->sasih = $request->sasih;
         $model->urip = $request->urip;
+        $model->kasta = $request->kasta;
         $model->save();
 
         return redirect()->route('keluarga.anggota.manage');

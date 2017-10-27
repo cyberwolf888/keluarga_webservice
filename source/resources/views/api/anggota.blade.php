@@ -17,6 +17,10 @@
         <td>{{ $model->user->name }}</td>
     </tr>
     <tr>
+        <td>Kasta</td>
+        <td>{{ $model->kasta }}</td>
+    </tr>
+    <tr>
         <td>Telp</td>
         <td>{{ $model->user->telp }}</td>
     </tr>
